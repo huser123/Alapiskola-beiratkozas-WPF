@@ -1,0 +1,213 @@
+﻿<Window x:Class="IskolaiBeiratkozasGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IskolaiBeiratkozasGenerator"
+        mc:Ignorable="d"
+        Title="Iskolai Beiratkozási Adatlap Generátor" Height="700" Width="800">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="20">
+                <TextBlock Text="ISKOLAI BEIRATKOZÁSI ADATLAP" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                <!-- Tanuló adatai -->
+                <GroupBox Header="Tanuló adatai" Margin="0,0,0,10" Padding="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Content="Tanuló neve:" Margin="0,5"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtTanuloNev" Margin="0,5" Padding="2"/>
+
+                        <Label Grid.Row="0" Grid.Column="2" Content="Születési helye:" Margin="10,5,0,5"/>
+                        <TextBox Grid.Row="0" Grid.Column="3" x:Name="txtSzuletesiHely" Margin="0,5" Padding="2"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Születési dátuma:" Margin="0,5"/>
+                        <DatePicker Grid.Row="1" Grid.Column="1" x:Name="dpSzuletesiDatum" Margin="0,5"/>
+
+                        <Label Grid.Row="1" Grid.Column="2" Content="Születési szám:" Margin="10,5,0,5"/>
+                        <TextBox Grid.Row="1" Grid.Column="3" x:Name="txtSzuletesiSzam" Margin="0,5" Padding="2"/>
+
+                        <Label Grid.Row="2" Grid.Column="0" Content="Állandó lakhely:" Margin="0,5"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" x:Name="txtLakhely" Margin="0,5" Padding="2"/>
+
+                        <Label Grid.Row="3" Grid.Column="0" Content="Állampolgárság:" Margin="0,5"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtAllampolgarsag" Margin="0,5" Padding="2" Text="magyar"/>
+
+                        <Label Grid.Row="3" Grid.Column="2" Content="Nemzetiség:" Margin="10,5,0,5"/>
+                        <TextBox Grid.Row="3" Grid.Column="3" x:Name="txtNemzetiseg" Margin="0,5" Padding="2" Text="magyar"/>
+                    </Grid>
+                </GroupBox>
+
+                <!-- Szülők adatai -->
+                <GroupBox Header="Szülők adatai" Margin="0,0,0,10" Padding="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Content="Apa neve:" Margin="0,5"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtApaNev" Margin="0,5" Padding="2"/>
+
+                        <Label Grid.Row="0" Grid.Column="2" Content="Anya neve:" Margin="10,5,0,5"/>
+                        <TextBox Grid.Row="0" Grid.Column="3" x:Name="txtAnyaNev" Margin="0,5" Padding="2"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Apa e-mail címe:" Margin="0,5"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtApaEmail" Margin="0,5" Padding="2"/>
+
+                        <Label Grid.Row="1" Grid.Column="2" Content="Anya e-mail címe:" Margin="10,5,0,5"/>
+                        <TextBox Grid.Row="1" Grid.Column="3" x:Name="txtAnyaEmail" Margin="0,5" Padding="2"/>
+
+                        <Label Grid.Row="2" Grid.Column="0" Content="Apa telefonszáma:" Margin="0,5"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtApaTelefon" Margin="0,5" Padding="2"/>
+
+                        <Label Grid.Row="2" Grid.Column="2" Content="Anya telefonszáma:" Margin="10,5,0,5"/>
+                        <TextBox Grid.Row="2" Grid.Column="3" x:Name="txtAnyaTelefon" Margin="0,5" Padding="2"/>
+
+                        <Label Grid.Row="3" Grid.Column="0" Content="Apa állandó lakhelye:" Margin="0,5"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtApaLakhely" Margin="0,5" Padding="2"/>
+
+                        <Label Grid.Row="3" Grid.Column="2" Content="Anya állandó lakhelye:" Margin="10,5,0,5"/>
+                        <TextBox Grid.Row="3" Grid.Column="3" x:Name="txtAnyaLakhely" Margin="0,5" Padding="2"/>
+
+                        <Label Grid.Row="4" Grid.Column="0" Content="Szülők egy háztartásban élnek?" Grid.ColumnSpan="2" Margin="0,5"/>
+                        <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                            <RadioButton x:Name="rbSzulokEgyuttIgen" Content="Igen" Margin="60,0,10,0" IsChecked="True"/>
+                            <RadioButton x:Name="rbSzulokEgyuttNem" Content="Nem" Margin="0,0,10,0"/>
+                        </StackPanel>
+                    </Grid>
+                </GroupBox>
+
+                <!-- Iskolai adatok -->
+                <GroupBox Header="Iskolai adatok" Margin="0,0,0,10" Padding="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Content="Melyik óvodába járt:" Margin="0,5"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtOvoda" Margin="0,5" Padding="2"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Milyen jellegű osztályt választana:" Margin="0,5" VerticalAlignment="Top"/>
+                        <StackPanel Grid.Row="1" Grid.Column="1" Margin="0,5">
+                            <CheckBox x:Name="chkOsztalyHagyomanyos" Content="Hagyományos" Margin="0,0,0,5"/>
+                            <CheckBox x:Name="chkOsztalySportos" Content="Sportos" Margin="0,0,0,5"/>
+                            <CheckBox x:Name="chkOsztalyEgeszNapos" Content="Egész napos" Margin="0,0,0,5"/>
+                        </StackPanel>
+
+                        <Label Grid.Row="1" Grid.Column="2" Content="Választható tantárgy:" Margin="10,5,0,5" VerticalAlignment="Top"/>
+                        <ComboBox Grid.Row="1" Grid.Column="3" x:Name="cmbTantargy" Margin="0,5" VerticalAlignment="Top"/>
+
+                        <Label Grid.Row="2" Grid.Column="0" Content="Napköziotthon:" Margin="0,5"/>
+                        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                            <RadioButton x:Name="rbNapkoziIgen" Content="Igen" Margin="0,0,10,0" IsChecked="True"/>
+                            <RadioButton x:Name="rbNapkoziNem" Content="Nem" Margin="0,0,10,0"/>
+                        </StackPanel>
+
+                        <Label Grid.Row="2" Grid.Column="2" Content="Iskolai étkeztetés:" Margin="10,5,0,5"/>
+                        <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center">
+                            <RadioButton x:Name="rbEtkeztetesIgen" Content="Igen" Margin="0,0,10,0" IsChecked="True"/>
+                            <RadioButton x:Name="rbEtkeztetesNem" Content="Nem" Margin="0,0,10,0"/>
+                        </StackPanel>
+
+                        <Label Grid.Row="3" Grid.Column="0" Content="Allergia, betegség:" Margin="0,5" VerticalAlignment="Top"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" x:Name="txtAllergia" Margin="0,5" TextWrapping="Wrap" Height="50" VerticalScrollBarVisibility="Auto"/>
+                    </Grid>
+                </GroupBox>
+
+                <!-- Kapcsolattartás -->
+                <GroupBox Header="Kapcsolattartás" Margin="0,0,0,10" Padding="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Content="Elsődleges kapcsolattartó neve:" Margin="0,5"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtKapcsolattartoNev" Margin="0,5" Padding="2"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Kapcsolattartó telefonszáma:" Margin="0,5"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtKapcsolattartoTelefon" Margin="0,5" Padding="2"/>
+
+                        <Label Grid.Row="2" Grid.Column="0" Content="Kapcsolattartó e-mail címe:" Margin="0,5"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtKapcsolattartoEmail" Margin="0,5" Padding="2"/>
+
+                        <Label Grid.Row="3" Grid.Column="0" Content="Levelezés neve (kinek címezhető):" Margin="0,5"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtLevelezesNev" Margin="0,5" Padding="2"/>
+                    </Grid>
+                </GroupBox>
+
+                <!-- Megjegyzés -->
+                <GroupBox Header="Egyéb megjegyzés" Margin="0,0,0,10" Padding="10">
+                    <TextBox x:Name="txtMegjegyzes" TextWrapping="Wrap" AcceptsReturn="True" Height="80" VerticalScrollBarVisibility="Auto"/>
+                </GroupBox>
+
+                <!-- Adatvédelmi nyilatkozat -->
+                <GroupBox Header="Adatvédelmi nyilatkozat" Margin="0,0,0,10" Padding="10">
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap" Margin="0,0,0,10">
+                            A Szlovák Köztársaság Nemzeti Tanácsának 18/2018-as, a személyes adatok védelméről szóló törvénye alapján hozzájárulok,
+                            hogy az iskola, mint adatkezelő (név: Ady Endre Alapiskola, statisztikai számjel: 36110744, cím: Ady utca 9, Párkány, 94301),
+                            az elektronikus nyomtatványon megadott személyes adatokat gyűjtheti és feldolgozhatja a felvételi eljárással és az iskolalátogatással kapcsolatban.
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontWeight="Bold">
+                            V zmysle zákona NR SR č. 18/2018 Z. z. o ochrane osobných údajov udeľujem súhlas škole ako spravovateľovi
+                            (Základná škola Endre Adyho s vyučovacím jazykom maďarským, IČO: 36110744 adresa: Adyho 9, 94301, Štúrovo),
+                            so zberom a spracovaním poskytnutých osobných údajov uvedených v tejto elektronickej prihláške a to za účelom
+                            evidencie prihlásených žiakov v súvisloti s prijímacím konaním a školskou dochádzkou žiaka.
+                        </TextBlock>
+                    </StackPanel>
+                </GroupBox>
+
+                <!-- Generálás -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                    <CheckBox x:Name="chkMegnyitas" Content="Megnyitás generálás után" IsChecked="True" Margin="0,0,20,0" VerticalAlignment="Center"/>
+                    <Button x:Name="btnGenerate" Content="Dokumentumok generálása" Padding="15,5" Click="btnGenerate_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
